@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block title %}
+收容所地點
+{% endblock %}
+{% block titlemessage %}
+<h1>
+  收容所地點
+  <small class="text-muted">各縣市收容所</small>
+</h1>
+
+{% endblock %}
+{% block content %}
+{% for org in orgs %}
+      <div class="card">
+        <div class="card-header">
+          {{ org.title }}
+        </div>
+        <div class="card-body">
+          {{ org.body | linebreaks }}
+        </div>
+        <div class="card-footer">
+          {{ org.pub_date }}
+        </div>
+      </div>
+{% endfor %}
+{% endblock %}

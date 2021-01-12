@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+{% block title %}
+汪喵星球
+{% endblock %}
+{% block titlemessage %}
+<center><h1>汪喵星球</h1></center>
+<center><h8>教養不棄養，結紮代替撲殺</h8></center>
+{% endblock %}
+{% block content %}
+
+<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-bs-target="/static/dogs.jpg/" data-bs-slide-to="0"></li>
+    <li data-bs-target="/static/face.jpg/" data-bs-slide-to="1" class="active"></li>
+    <li data-bs-target="/static/sit.jpg/" data-bs-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="carousel-item">
+      <img src="/static/dogs.jpg/" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item active">
+      <img src="/static/face.jpg" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="/static/sit.jpg" class="d-block w-100" alt="...">
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="/static/dogs.jpg/" role="button" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="/static/sit.jpg/" role="button" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </a>
+</div>
+<br>
+
+
+
+
+        <table class="table table-striped">
+          <tr><th>編號</th><th>主題</th><th>張貼時間</th></tr>
+          {% for post in posts %}
+          <tr>
+            <td>{{ post.id }}</td>
+            <td>
+              <a href="/post/{{post.slug}}/">{{ post.title }}</a>
+            </td>
+            <td>
+              {{ post.pub_date }}
+            </td>
+          </tr>
+          {% endfor %}
+        </table>
+<br>
+<br>
+        <div class="card">
+          <div class="card-header">
+            <center><b>關於我們</b></center>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title"><center>汪喵團隊</center></h5>
+            <p class="card-text">
+              <center>我們是一群喜愛動物的人
+              <br>為了毛小孩們更大的福祉
+              <br>致力推廣領養代替購買的行為
+              <br>希望牠們能被更多的人關心♡♡♡</center>
+            </p>
+            <br>
+            <center>
+              <a href="https://www.nkust.edu.tw/" class="btn btn-primary">更多關於我們的訊息</a>
+            </center>
+          </div>
+        </div>
+
+
+<br>
+        本網頁被瀏覽了{{hit_count}}次
+{% endblock %}
+
