@@ -2,10 +2,11 @@ from django.contrib import admin
 from import_export.admin import ImportExportModelAdmin
 from mainsite.models import Post, AccessInfo, Branch, StoreIncome, text1, City, Keep, Human, Adopt, Died
 
-class PostAdmin(admin.ModelAdmin):
+class PostAdmin(ImportExportModelAdmin):
     list_display = ('title', 'slug', 'pub_date')
 
 admin.site.register(Post, PostAdmin)
+
 admin.site.register(AccessInfo)
 
 class BranchAdmin(admin.ModelAdmin):

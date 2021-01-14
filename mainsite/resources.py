@@ -1,5 +1,9 @@
 from import_export import resources
-from .models import text1, City, Keep, Human, Adopt, Died
+from .models import Post, text1, City, Keep, Human, Adopt, Died
+
+class PostResource(resources.ModelResource):
+    class Meta:
+        model = Post
 
 class CityResource(resources.ModelResource):
     class Meta:
